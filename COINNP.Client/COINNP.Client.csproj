@@ -12,11 +12,11 @@
 		<Authors>RobIII</Authors>
 		<Company>Wholesale Operator</Company>
 		<Copyright>(C) 2023 - 2024 Wholesale Operator</Copyright>
-		<PackageProjectUrl>https://github.com/Wholesale-Operator/COINNP.Client</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/Wholesale-Operator/CoinNP</PackageProjectUrl>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/Wholesale-Operator/COINNP.Client</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Wholesale-Operator/CoinNP</RepositoryUrl>
 		<PackageTags>VerenigingCOIN, Vereniging-COIN, Number Portability</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>Provides a 'wrapper' for vereniging COIN's Number Portability Library that hides a few 'oddities' of working with the NP messages and message consumer / listener. This library aims to provide a more 'idiomatic C#' API which uses modern C# concepts like immutable records, nullable aware and proper types like DateTimeOffset or bool where COIN's implementation mostly only provides strings.</Description>

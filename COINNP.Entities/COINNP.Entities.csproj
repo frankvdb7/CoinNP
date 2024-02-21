@@ -12,11 +12,11 @@
 		<Authors>RobIII</Authors>
 		<Company>Wholesale Operator</Company>
 		<Copyright>(C) 2023 - 2024 Wholesale Operator</Copyright>
-		<PackageProjectUrl>https://github.com/Wholesale-Operator/COINNP.Entities</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/Wholesale-Operator/CoinNP</PackageProjectUrl>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/Wholesale-Operator/COINNP.Entities</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Wholesale-Operator/CoinNP</RepositoryUrl>
 		<PackageTags>VerenigingCOIN, Vereniging-COIN, Number Portability</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>Provides entities for the COINNP.Client.</Description>
