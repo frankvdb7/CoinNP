@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>COIN Number Portability Client</Title>
+		<Authors>RobIII</Authors>
+		<Company>Wholesale Operator</Company>
+		<Copyright>(C) 2023 - 2024 Wholesale Operator</Copyright>
+		<PackageProjectUrl>https://github.com/Wholesale-Operator/COINNP.Client</PackageProjectUrl>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/Wholesale-Operator/COINNP.Client</RepositoryUrl>
+		<PackageTags>VerenigingCOIN, Vereniging-COIN, Number Portability</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Description>Provides a 'wrapper' for vereniging COIN's Number Portability Library that hides a few 'oddities' of working with the NP messages and message consumer / listener. This library aims to provide a more 'idiomatic C#' API which uses modern C# concepts like immutable records, nullable aware and proper types like DateTimeOffset or bool where COIN's implementation mostly only provides strings.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3">
+			<PrivateAssets>compile</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="PolySharp" Version="1.14.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+		<PackageReference Include="Vereniging-COIN.Sdk.NP" Version="1.5.0">
+			<PrivateAssets>compile</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\COINNP.Entities\COINNP.Entities.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="ResourceFiles\Translations.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Translations.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="ResourceFiles\Translations.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Translations.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>
