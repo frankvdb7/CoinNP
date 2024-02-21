@@ -11,7 +11,7 @@
 		<Title>COIN Number Portability Client</Title>
 		<Authors>RobIII</Authors>
 		<Company>Wholesale Operator</Company>
-		<Copyright>(C) 2023 Wholesale Operator</Copyright>
+		<Copyright>(C) 2023 - 2024 Wholesale Operator</Copyright>
 		<PackageProjectUrl>https://github.com/Wholesale-Operator/COINNP.Entities</PackageProjectUrl>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -19,6 +19,7 @@
 		<RepositoryUrl>https://github.com/Wholesale-Operator/COINNP.Entities</RepositoryUrl>
 		<PackageTags>VerenigingCOIN, Vereniging-COIN, Number Portability</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Description>Provides entities for the COINNP.Client.</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
