@@ -21,7 +21,7 @@ dotnet add package COINNP.Client
 
 To be able to send and receive NP messages you need an NPClient. Let's create one:
 
-```c#'
+```c#
 var npclient = new NPClient(
     Options.Create(
         new NPClientOptions()
