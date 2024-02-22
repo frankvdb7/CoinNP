@@ -16,7 +16,7 @@ This library uses the [COINNP.Entities](https://www.nuget.org/packages/COINNP.En
 Install the NuGet package:
 
 ```ps
-dotnet add package NPClient
+dotnet add package COINNP.Client
 ```
 
 To be able to send and receive NP messages you need an NPClient. Let's create one:
