@@ -61,6 +61,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+
+	  <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.7.0" />
+
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.7.0" />
+
+	  <PackageReference Include="System.Text.Json" Version="8.0.5" />
 		<EmbeddedResource Update="ResourceFiles\Translations.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Translations.Designer.cs</LastGenOutput>
