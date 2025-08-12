@@ -62,9 +62,9 @@
 
 	<ItemGroup>
 
-	  <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.13.0" />
+	  <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.13.1" />
 
-	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.1" />
 
 	  <PackageReference Include="System.Text.Json" Version="9.0.7" />
 		<EmbeddedResource Update="ResourceFiles\Translations.resx">
