@@ -121,8 +121,14 @@ public class NPClient : IDisposable, INPClient
     }
 
     /// <inheritdoc/>
-    public Task SendMessageAsync(MessageEnvelope messageEnvelope, CancellationToken cancellationToken = default)
-        => _numberportabilityservice.SendMessageAsync(messageEnvelope.ToCOINMessageEnvelope(_valuehelper), cancellationToken);
+    public async Task<SendMessageResponse> SendMessageAsync(MessageEnvelope messageEnvelope, CancellationToken cancellationToken = default)
+    {
+        var response = await _numberportabilityservice
+            .SendMessageAsync(messageEnvelope.ToCOINMessageEnvelope(_valuehelper), cancellationToken)
+            .ConfigureAwait(false);
+
+        return response.FromCOIN();
+    }
 
     /// <inheritdoc/>
     public Task ConfirmMessageAsync(string id, CancellationToken cancellationToken = default)

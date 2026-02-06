@@ -12,8 +12,10 @@ public interface INPClient
     /// </summary>
     /// <param name="messageEnvelope">The <see cref="MessageEnvelope"/> containing the <see cref="Message"/> to send.</param>
     /// <param name="cancellationToken">A cancellation token to cancel operation.</param>
-    /// <returns>A task that represents the asynchronous send operation.</returns>
-    public Task SendMessageAsync(MessageEnvelope messageEnvelope, CancellationToken cancellationToken = default);
+    /// <returns>
+    /// A task that represents the asynchronous send operation and contains the response details from COIN.
+    /// </returns>
+    public Task<SendMessageResponse> SendMessageAsync(MessageEnvelope messageEnvelope, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Asynchronously confirms an NP message.

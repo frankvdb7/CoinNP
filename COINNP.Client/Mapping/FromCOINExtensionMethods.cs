@@ -9,6 +9,18 @@ namespace COINNP.Client.Mapping;
 
 internal static class FromCOINExtensionMethods
 {
+    internal static SendMessageResponse FromCOIN(this C.MessageResponse messageResponse)
+        => messageResponse switch
+        {
+            C.ErrorResponse errorResponse => new(
+                errorResponse.TransactionId,
+                errorResponse.Errors?
+                    .Select(error => new SendMessageError(error.Code, error.Message))
+                    .ToArray()
+            ),
+            _ => new(messageResponse.TransactionId)
+        };
+
     internal static MessageEnvelope FromCOIN<T>(this C.IMessageEnvelope<T> messageEnvelope, IValueHelper valueHelper)
          where T : C.INpMessageContent
          => new(
