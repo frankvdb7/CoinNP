@@ -30,30 +30,27 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseBool_ThrowsOnUnknownValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseBool("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseBool("x"));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseBool_ThrowsOnInvalidCase()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseBool("y");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseBool("y"));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseBool_ThrowsOnEmpty()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseBool(string.Empty);
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseBool(string.Empty));
     }
 
     [TestMethod]
@@ -84,21 +81,19 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseNullableBoolThrowsOnUnknownValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseBool("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseBool("x"));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseNullableBoolThrowsOnInvalidCase()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseBool("y");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseBool("y"));
     }
 
     [TestMethod]
@@ -139,12 +134,11 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseContractState_ThrowsOnUnknownValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default with { IgnoreCase = false }));
 
-        target.ParseContractState("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseContractState("x"));
     }
 
     [TestMethod]
@@ -155,19 +149,17 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseCurrency_ThrowsOnInvalidDecimalSeparator()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseCurrency("12.3456");
+        Assert.ThrowsExactly<FormatException>(() => target.ParseCurrency("12.3456"));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseCurrency_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        Assert.AreEqual(12.3456m, target.ParseCurrency("x"));
+        Assert.ThrowsExactly<FormatException>(() => target.ParseCurrency("x"));
     }
 
     [TestMethod]
@@ -185,11 +177,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseCurrencyType_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseCurrencyType("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseCurrencyType("x"));
     }
 
     [TestMethod]
@@ -200,11 +191,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseDateTimeOffset_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseDateTimeOffset("x");
+        Assert.ThrowsExactly<FormatException>(() => target.ParseDateTimeOffset("x"));
     }
 
     [TestMethod]
@@ -217,11 +207,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseNullableDateTimeOffset_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseNullableDateTimeOffset("x");
+        Assert.ThrowsExactly<FormatException>(() => target.ParseNullableDateTimeOffset("x"));
     }
 
     [TestMethod]
@@ -241,11 +230,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseNullableInt_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseNullableInt("x");
+        Assert.ThrowsExactly<FormatException>(() => target.ParseNullableInt("x"));
     }
 
     [TestMethod]
@@ -261,11 +249,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseTariffType_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseCurrencyType("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseCurrencyType("x"));
     }
 
     [TestMethod]
@@ -276,11 +263,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FormatException))]
     public void ParseTimespan_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseTimeSpan("x");
+        Assert.ThrowsExactly<FormatException>(() => target.ParseTimeSpan("x"));
     }
 
     [TestMethod]
@@ -294,11 +280,10 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseTypeOfNumber_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseTypeOfNumber("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseTypeOfNumber("x"));
     }
 
     [TestMethod]
@@ -312,10 +297,9 @@ public class ValueHelperParseTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
     public void ParseVAT_ThrowsOnInvalidValue()
     {
         var target = new ValueHelper(Options.Create(ValueHelperOptions.Default));
-        target.ParseVAT("x");
+        Assert.ThrowsExactly<InvalidOperationException>(() => target.ParseVAT("x"));
     }
 }
